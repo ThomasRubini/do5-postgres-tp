@@ -71,3 +71,15 @@ class Passage(db.Model):
     idel = db.Column(db.Integer, db.ForeignKey('eleve.idel'), primary_key=True)
     date_passage = db.Column(db.Date, primary_key=True)
     note = db.Column(db.Integer)
+
+# view
+class VEtud(db.Model):
+    __tablename__ = 'vetud'
+    idel = db.Column(db.Integer, primary_key=True, nullable=False)
+    nom = db.Column(db.String(50), nullable=False)
+    prenom = db.Column(db.String(30))
+    date_naissance = db.Column(db.Date)
+    nbdevoirs = db.Column(db.Integer)
+
+    def __repr__(self):
+        return f"<VEtud {self.idel} {self.nom} {self.prenom} {self.date_naissance} {self.nbdevoirs}>"
