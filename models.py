@@ -38,6 +38,8 @@ class Eleve(db.Model):
     prenom = db.Column(db.String(30))
     college = db.Column(db.String(8), db.ForeignKey('etablissement.rne'))
     niveau = db.Column(db.String(4), db.ForeignKey('niveau.niveau'))
+    date_naissance = db.Column(db.Date)
+    sexe = db.Column(db.String(10), nullable=False, server_default='FILLE')
 
 class Exercice(db.Model):
     __tablename__ = 'exercice'

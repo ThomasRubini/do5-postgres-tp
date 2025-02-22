@@ -14,8 +14,11 @@ def use_vetud_view(idel):
     print(f"Eleve {idel} information:")
     print(VEtud.query.filter_by(idel=idel).all())
 
-def insert_into_eleve(conn, idel, nom, prenom, college, niveau, date_naissance, sexe):
-    pass
+def insert_into_eleve(idel, nom, prenom, college, niveau, date_naissance, sexe):
+    eleve = Eleve(idel=idel, nom=nom, prenom=prenom, college=college, niveau=niveau, date_naissance=date_naissance, sexe=sexe)
+    db.session.add(eleve)
+    db.session.commit()
+    print(f"Eleve {idel} inserted")
 
 def main():
     with app.app_context():
@@ -25,6 +28,8 @@ def main():
         get_prof_table_content()
         # Q3
         use_vetud_view(1)
+        # Q4
+        insert_into_eleve(11, "Doe", "John", "0341278E", "6eme", "2000-01-01", "GARCON")
 
 
 
