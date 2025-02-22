@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devoirs Input</title>
+</head>
+<body>
+    <h1>Identifiant de l'élève:</h1>
+    <form action="/devoirs" method="get">
+        <label for="idel">IDEL:</label>
+        <input type="text" id="idel" name="idel" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if devoirs %}
+        <h2>Nombre de devoirs pour l'élève choisi:</h2>
+        <p>{{ devoirs }}</p>
+    {% endif %}        
+</body>
+</html>

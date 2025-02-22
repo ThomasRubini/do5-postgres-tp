@@ -33,6 +33,19 @@ def add_eleve():
         return "Erreur lors de l'ajout de l'élève: " + str(e)
     return 'Eleve ajouté'
 
+@app.route('/devoirs')
+def get_devoirs():
+    idel = request.args.get('idel')
+    if idel is None:
+        devoirs = None
+    else:
+        data = VEtud.query.filter_by(idel=idel).first()
+        if data is None:
+            return "Eleve non trouvé"
+        else:
+            devoirs = data.nbdevoirs
+    return render_template('devoirs.html', devoirs=devoirs)
+
 def main():
     app.run(host='0.0.0.0', port=5000)
 
