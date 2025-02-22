@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Année de naissance</th>
+                <th>RNE</th>
+                <th>Ville</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prof in profs %}
+            <tr>
+                <td>{{ prof.idp }}</td>
+                <td>{{ prof.nom }}</td>
+                <td>{{ prof.annee_naissance }}</td>
+                <td>{{ prof.rne }}</td>
+                <td>{{ prof.ville }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
