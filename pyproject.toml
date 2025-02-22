@@ -1,0 +1,20 @@
+[project]
+name = "do5-postgres-tp"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Thomas Rubini",email = "74205383+ThomasRubini@users.noreply.github.com"}
+]
+license = {text = "CC0"}
+requires-python = ">=3.11"
+dependencies = [
+    "psycopg2 (>=2.9.10,<3.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
