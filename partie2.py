@@ -1,8 +1,9 @@
 from models import *
 
 
-def get_postgres_version(conn):
-    pass
+def get_postgres_version():
+    db.engine.connect()
+    print(f"PostgreSQL version: {db.engine.dialect.server_version_info}")
 
 
 def get_prof_table_content():
@@ -17,6 +18,8 @@ def insert_into_eleve(conn, idel, nom, prenom, college, niveau, date_naissance, 
 
 def main():
     with app.app_context():
+        # Q1
+        get_postgres_version()
         # Q2
         get_prof_table_content()
 
