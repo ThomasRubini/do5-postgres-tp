@@ -3,6 +3,10 @@ from flask import Flask, request
 from models import *
 from flask import render_template
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/prof')
 def get_prof():
     profs = Prof.query.all()
